@@ -6,7 +6,7 @@
 /*   By: kgoc <kgoc@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 18:48:38 by kgoc              #+#    #+#             */
-/*   Updated: 2023/10/02 18:48:39 by kgoc             ###   ########.fr       */
+/*   Updated: 2023/10/11 18:08:52 by kgoc             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,8 @@ int	check_meals(t_game_rules *r, t_philo *p)
 	i = 0;
 	while (i < r->num_philos)
 	{
-		if (p[i].num_eat_philo == r->num_limit_eat)
-		{
-			if (p[i].did_it_eat == 0)
-			{
-				p[i].did_it_eat = 1;
-				r->total_meal++;
-			}
-		}
+		if (p[i].did_it_eat == 1)
+			r->total_meal++;
 		i++;
 	}
 	if (r->total_meal == r->num_philos)

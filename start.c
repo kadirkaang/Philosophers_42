@@ -6,7 +6,7 @@
 /*   By: kgoc <kgoc@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:10:28 by kgoc              #+#    #+#             */
-/*   Updated: 2023/09/29 18:50:38 by kgoc             ###   ########.fr       */
+/*   Updated: 2023/10/11 18:13:40 by kgoc             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,11 @@ void	*p_thread(void *philo_param)
 		usleep(1500);
 	while (!(rules->died))
 	{
+		philo_eats(philo);
+		if (rules->num_limit_eat != -1 && (philo->num_eat_philo == rules->num_limit_eat))
+			philo->did_it_eat = 1;
 		if (rules->all_philos_ate)
 			break ;
-		philo_eats(philo);
 		print_status(rules, philo->id_philo, "is sleeping");
 		sleep_philo(rules->time_sleep, rules);
 		print_status(rules, philo->id_philo, "is thinking");

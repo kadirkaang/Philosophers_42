@@ -6,7 +6,7 @@
 /*   By: kgoc <kgoc@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 17:10:35 by kgoc              #+#    #+#             */
-/*   Updated: 2023/09/28 17:13:38 by kgoc             ###   ########.fr       */
+/*   Updated: 2023/10/11 18:10:42 by kgoc             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	sleep_philo(long long time, t_game_rules *rules)
 	{
 		if (time_result(i, timestamp()) >= time)
 			break ;
-		usleep(rules->time_sleep * 1000);
+		usleep(50);
 	}
 }
 
@@ -50,7 +50,7 @@ void	eat_philo(long long time, t_game_rules *rules)
 	{
 		if (time_result(i, timestamp()) >= time)
 			break ;
-		usleep(rules->time_eat * 1000);
+		usleep(50);
 	}
 }
 
